@@ -1,0 +1,7 @@
+---
+- name: Copy test file on the remote server
+  become: yes
+  template:
+      src: 'test.j2'
+      dest: '/test.txt'
+      owner: 'root'

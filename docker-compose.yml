@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+
+    avm:
+        build:
+            context: .docker
+            dockerfile: Dockerfile
+            args:
+                - "DOCKER_USER=${DOCKER_USER}"
+                - "DOCKER_USER_ID=${DOCKER_USER_ID}"
+        image: "avm:dev"
+        restart: "no"
+        user: "${DOCKER_USER}"
+        environment:
+            - "SSH_AUTH_SOCK=/ssh-agent"
+            - "ANSIBLE_VERSIONS_0=${ANSIBLE_VERSIONS}"
+            - "ANSIBLE_LABEL_0=${ANSIBLE_LABEL}"
+            - "INSTALL_TYPE=${INSTALL_TYPE}"
+            - "ANSIBLE_DEFAULT_VERSION=${ANSIBLE_DEFAULT_VERSION}"
+        volumes:
+            - "$PWD:/home/docker"
+            - "$SSH_AUTH_SOCK:/ssh-agent"
+        working_dir: "/home/docker"

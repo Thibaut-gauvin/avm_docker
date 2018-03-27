@@ -1,0 +1,2 @@
+[app-test]
+ovh ansible_ssh_host=<remote-ip> ansible_ssh_user=<remote-user> ansible_ssh_port=22
