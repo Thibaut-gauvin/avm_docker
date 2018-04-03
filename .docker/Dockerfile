@@ -64,11 +64,11 @@ ENV ANSIBLE_VERSIONS_3="2.4.3.0"
 ENV ANSIBLE_LABEL_3="v2.4"
 ENV INSTALL_TYPE_3="pip"
 
-# Set default version
-ENV ANSIBLE_DEFAULT_VERSION="v2.1"
+# Set default version
+ARG ANSIBLE_DEFAULT_VERSION="v2.4"
 
-# For debug avm install
+# For debug avm install
 ENV AVM_VERBOSE="v"
 
-# Run install script
+# Run install script
 RUN su ${DOCKER_USER} -c "cd /opt/avm && TERM=xterm ./setup.sh"

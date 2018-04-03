@@ -6,10 +6,10 @@ Based on [https://github.com/ahelal/avm](https://github.com/ahelal/avm)
 
 ### Pre-installed Ansible version ready to use :
 
-- :heavy_check_mark: v2.1.6
-- :heavy_check_mark: v2.2.3
-- :heavy_check_mark: v2.3.3
-- :heavy_check_mark: v2.4.3
+- :heavy_check_mark: 2.1.6.0 tagged as "v2.1"
+- :heavy_check_mark: 2.2.3.0 tagged as "v2.2"
+- :heavy_check_mark: 2.3.3.0 tagged as "v2.3"
+- :heavy_check_mark: 2.4.3.0 tagged as "v2.4"
 
 ### Install
 
@@ -37,6 +37,10 @@ done!
 
     # List available Ansible install
     ~> avm list
+    
+    # Switch Ansible version
+    ~> avm use v2.4
+    ~> ansible --version
     
     # Run test playbook
     ~> ansible-playbook .ansible/project.yml -i .ansible/inventories/inventory_test --ask-sudo-pass

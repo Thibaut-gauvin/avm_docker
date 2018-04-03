@@ -9,6 +9,7 @@ services:
             args:
                 - "DOCKER_USER=${DOCKER_USER}"
                 - "DOCKER_USER_ID=${DOCKER_USER_ID}"
+                - "ANSIBLE_DEFAULT_VERSION=${ANSIBLE_DEFAULT_VERSION}"
         image: "avm:1.0"
         restart: "no"
         user: "${DOCKER_USER}"
